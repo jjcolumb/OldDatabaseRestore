@@ -1,0 +1,1178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC495852-4A66-487C-B3BB-17E9816939BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OldDatabaseRestore.Module</RootNamespace>
+    <AssemblyName>OldDatabaseRestore.Module</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EasyTest\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bogus, Version=32.0.1.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bogus.32.0.1\lib\net40\Bogus.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v20.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v20.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Xpo.v20.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v20.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v20.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v20.2.Core">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v20.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\A1.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\A1.Designer.cs">
+      <DependentUpon>A1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\AB_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\AB_Main.Designer.cs">
+      <DependentUpon>AB_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\AI_Items.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\AI_Items.Designer.cs">
+      <DependentUpon>AI_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\AI_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\AI_Main.Designer.cs">
+      <DependentUpon>AI_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\AN_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\AN_Main.Designer.cs">
+      <DependentUpon>AN_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CD_Address.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CD_Address.Designer.cs">
+      <DependentUpon>CD_Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CD_Contacts.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CD_Contacts.Designer.cs">
+      <DependentUpon>CD_Contacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CD_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CD_Main.Designer.cs">
+      <DependentUpon>CD_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CG_Items.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CG_Items.Designer.cs">
+      <DependentUpon>CG_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CG_List.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CG_List.Designer.cs">
+      <DependentUpon>CG_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CG_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CG_Main.Designer.cs">
+      <DependentUpon>CG_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\cmtrace.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\cmtrace.Designer.cs">
+      <DependentUpon>cmtrace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Chain.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Chain.Designer.cs">
+      <DependentUpon>CM_Chain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Comments.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Comments.Designer.cs">
+      <DependentUpon>CM_Comments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Contacts.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Contacts.Designer.cs">
+      <DependentUpon>CM_Contacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Credit_Reference.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Credit_Reference.Designer.cs">
+      <DependentUpon>CM_Credit_Reference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Credit_Tracking.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Credit_Tracking.Designer.cs">
+      <DependentUpon>CM_Credit_Tracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_History.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_History.Designer.cs">
+      <DependentUpon>CM_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_History_Credit.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_History_Credit.Designer.cs">
+      <DependentUpon>CM_History_Credit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_History_Credit_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_History_Credit_Data.Designer.cs">
+      <DependentUpon>CM_History_Credit_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_History_Credit_Detail_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_History_Credit_Detail_Data.Designer.cs">
+      <DependentUpon>CM_History_Credit_Detail_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_History_Sales_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_History_Sales_Data.Designer.cs">
+      <DependentUpon>CM_History_Sales_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Main.Designer.cs">
+      <DependentUpon>CM_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Options.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Options.Designer.cs">
+      <DependentUpon>CM_Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Xref.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CM_Xref.Designer.cs">
+      <DependentUpon>CM_Xref.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ConnectionHelper.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CR_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CR_Main.Designer.cs">
+      <DependentUpon>CR_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CS_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\CS_Main.Designer.cs">
+      <DependentUpon>CS_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\DL_Order_Log.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\DL_Order_Log.Designer.cs">
+      <DependentUpon>DL_Order_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\DL_Order_Summary.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\DL_Order_Summary.Designer.cs">
+      <DependentUpon>DL_Order_Summary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\DP_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\DP_Main.Designer.cs">
+      <DependentUpon>DP_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IA_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IA_Main.Designer.cs">
+      <DependentUpon>IA_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IC_Inventory_Active.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IC_Inventory_Active.Designer.cs">
+      <DependentUpon>IC_Inventory_Active.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IC_Inventory_Audit_Pivot.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IC_Inventory_Audit_Pivot.Designer.cs">
+      <DependentUpon>IC_Inventory_Audit_Pivot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IC_Inventory_Item_Audit.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IC_Inventory_Item_Audit.Designer.cs">
+      <DependentUpon>IC_Inventory_Item_Audit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IC_Inventory_Main_Audit.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IC_Inventory_Main_Audit.Designer.cs">
+      <DependentUpon>IC_Inventory_Main_Audit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Categories.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Categories.Designer.cs">
+      <DependentUpon>IM_Categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Categorys.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Categorys.Designer.cs">
+      <DependentUpon>IM_Categorys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Core.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Core.Designer.cs">
+      <DependentUpon>IM_History_Core.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Credit_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Credit_Data.Designer.cs">
+      <DependentUpon>IM_History_Credit_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Credit_Detail_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Credit_Detail_Data.Designer.cs">
+      <DependentUpon>IM_History_Credit_Detail_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Lost_Sales_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Lost_Sales_Data.Designer.cs">
+      <DependentUpon>IM_History_Lost_Sales_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Return_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Return_Data.Designer.cs">
+      <DependentUpon>IM_History_Return_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Sales_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Sales_Data.Designer.cs">
+      <DependentUpon>IM_History_Sales_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Stock_Outs_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Stock_Outs_Data.Designer.cs">
+      <DependentUpon>IM_History_Stock_Outs_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Tracking.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_History_Tracking.Designer.cs">
+      <DependentUpon>IM_History_Tracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Inner_Pack.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Inner_Pack.Designer.cs">
+      <DependentUpon>IM_Inner_Pack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Locations.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Locations.Designer.cs">
+      <DependentUpon>IM_Locations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Main.Designer.cs">
+      <DependentUpon>IM_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Master_Fix.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Master_Fix.Designer.cs">
+      <DependentUpon>IM_Master_Fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Numbers_All.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Numbers_All.Designer.cs">
+      <DependentUpon>IM_Numbers_All.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Number_All_Lookup.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Number_All_Lookup.Designer.cs">
+      <DependentUpon>IM_Number_All_Lookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Number_Prefix.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Number_Prefix.Designer.cs">
+      <DependentUpon>IM_Number_Prefix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_On_Water.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_On_Water.Designer.cs">
+      <DependentUpon>IM_On_Water.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Options.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Options.Designer.cs">
+      <DependentUpon>IM_Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Prices.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Prices.Designer.cs">
+      <DependentUpon>IM_Prices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Price_Sets.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Price_Sets.Designer.cs">
+      <DependentUpon>IM_Price_Sets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_QTYs.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_QTYs.Designer.cs">
+      <DependentUpon>IM_QTYs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_QTY_Cost.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_QTY_Cost.Designer.cs">
+      <DependentUpon>IM_QTY_Cost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_QTY_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_QTY_Data.Designer.cs">
+      <DependentUpon>IM_QTY_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Reorders.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Reorders.Designer.cs">
+      <DependentUpon>IM_Reorders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Temp_New_Items.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IM_Temp_New_Items.Designer.cs">
+      <DependentUpon>IM_Temp_New_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IP_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IP_Data.Designer.cs">
+      <DependentUpon>IP_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IR_Batch.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IR_Batch.Designer.cs">
+      <DependentUpon>IR_Batch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IR_Item.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IR_Item.Designer.cs">
+      <DependentUpon>IR_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IR_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IR_Main.Designer.cs">
+      <DependentUpon>IR_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IV_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\IV_Main.Designer.cs">
+      <DependentUpon>IV_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\job_track_log.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\job_track_log.Designer.cs">
+      <DependentUpon>job_track_log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Job_Track_Log_Names.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Job_Track_Log_Names.Designer.cs">
+      <DependentUpon>Job_Track_Log_Names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Joer_Trace.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Joer_Trace.Designer.cs">
+      <DependentUpon>Joer_Trace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Leslie1.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Leslie1.Designer.cs">
+      <DependentUpon>Leslie1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\locimtrace.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\locimtrace.Designer.cs">
+      <DependentUpon>locimtrace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ModuleInfo.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ModuleInfo.Designer.cs">
+      <DependentUpon>ModuleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OB_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OB_Main.Designer.cs">
+      <DependentUpon>OB_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OI_Items.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OI_Items.Designer.cs">
+      <DependentUpon>OI_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OI_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OI_Main.Designer.cs">
+      <DependentUpon>OI_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OI_Unapplied.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OI_Unapplied.Designer.cs">
+      <DependentUpon>OI_Unapplied.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OS_Raw_Export_Log.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OS_Raw_Export_Log.Designer.cs">
+      <DependentUpon>OS_Raw_Export_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OS_Raw_Order_Header.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OS_Raw_Order_Header.Designer.cs">
+      <DependentUpon>OS_Raw_Order_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OS_Raw_Order_Line.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OS_Raw_Order_Line.Designer.cs">
+      <DependentUpon>OS_Raw_Order_Line.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OW_Batch.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\OW_Batch.Designer.cs">
+      <DependentUpon>OW_Batch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PD_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PD_Main.Designer.cs">
+      <DependentUpon>PD_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PE_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PE_Main.Designer.cs">
+      <DependentUpon>PE_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Account_Manager.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Account_Manager.Designer.cs">
+      <DependentUpon>pl_Account_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Account_Priority.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Account_Priority.Designer.cs">
+      <DependentUpon>pl_Account_Priority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Action.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Action.Designer.cs">
+      <DependentUpon>pl_Action.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Action_Taken_on_Letter.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Action_Taken_on_Letter.Designer.cs">
+      <DependentUpon>pl_Action_Taken_on_Letter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Address_ShipType.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Address_ShipType.Designer.cs">
+      <DependentUpon>pl_Address_ShipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Address_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Address_Type.Designer.cs">
+      <DependentUpon>pl_Address_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Adjustment_Types.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Adjustment_Types.Designer.cs">
+      <DependentUpon>pl_Adjustment_Types.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_All_Locations.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_All_Locations.Designer.cs">
+      <DependentUpon>pl_All_Locations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Batch_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Batch_Status.Designer.cs">
+      <DependentUpon>pl_Batch_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Batch_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Batch_Type.Designer.cs">
+      <DependentUpon>pl_Batch_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Chain_Store_Name.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Chain_Store_Name.Designer.cs">
+      <DependentUpon>pl_Chain_Store_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Comment_Where.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Comment_Where.Designer.cs">
+      <DependentUpon>pl_Comment_Where.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Commission_Split.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Commission_Split.Designer.cs">
+      <DependentUpon>pl_Commission_Split.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Country.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Country.Designer.cs">
+      <DependentUpon>pl_Country.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Credit_Reason.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Credit_Reason.Designer.cs">
+      <DependentUpon>pl_Credit_Reason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Credit_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Credit_Status.Designer.cs">
+      <DependentUpon>pl_Credit_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Day_of_the_Week.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Day_of_the_Week.Designer.cs">
+      <DependentUpon>pl_Day_of_the_Week.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Delivery_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Delivery_Type.Designer.cs">
+      <DependentUpon>pl_Delivery_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Department_Name.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Department_Name.Designer.cs">
+      <DependentUpon>pl_Department_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Description_of_Item.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Description_of_Item.Designer.cs">
+      <DependentUpon>pl_Description_of_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Discount_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Discount_Type.Designer.cs">
+      <DependentUpon>pl_Discount_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Formal_Title.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Formal_Title.Designer.cs">
+      <DependentUpon>pl_Formal_Title.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_How_Credit_Disposed.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_How_Credit_Disposed.Designer.cs">
+      <DependentUpon>pl_How_Credit_Disposed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_How_Each_Packed.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_How_Each_Packed.Designer.cs">
+      <DependentUpon>pl_How_Each_Packed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Inventory_Count_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Inventory_Count_Status.Designer.cs">
+      <DependentUpon>pl_Inventory_Count_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Item_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Item_Status.Designer.cs">
+      <DependentUpon>pl_Item_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Letter_Response.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Letter_Response.Designer.cs">
+      <DependentUpon>pl_Letter_Response.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Letter_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Letter_Type.Designer.cs">
+      <DependentUpon>pl_Letter_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Manual_Adjust_Comments.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Manual_Adjust_Comments.Designer.cs">
+      <DependentUpon>pl_Manual_Adjust_Comments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Marital_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Marital_Status.Designer.cs">
+      <DependentUpon>pl_Marital_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Month.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Month.Designer.cs">
+      <DependentUpon>pl_Month.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_New_Locations.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_New_Locations.Designer.cs">
+      <DependentUpon>pl_New_Locations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_OPTION.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_OPTION.Designer.cs">
+      <DependentUpon>pl_OPTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Order_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Order_Status.Designer.cs">
+      <DependentUpon>pl_Order_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Order_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Order_Type.Designer.cs">
+      <DependentUpon>pl_Order_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Overseas_FOB.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Overseas_FOB.Designer.cs">
+      <DependentUpon>pl_Overseas_FOB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Overseas_Ship_Via.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Overseas_Ship_Via.Designer.cs">
+      <DependentUpon>pl_Overseas_Ship_Via.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Overseas_Terms.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Overseas_Terms.Designer.cs">
+      <DependentUpon>pl_Overseas_Terms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_PALET.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_PALET.Designer.cs">
+      <DependentUpon>pl_PALET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Period.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Period.Designer.cs">
+      <DependentUpon>pl_Period.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Periods.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Periods.Designer.cs">
+      <DependentUpon>pl_Periods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Phone_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Phone_Type.Designer.cs">
+      <DependentUpon>pl_Phone_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Port_Of_Entry.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Port_Of_Entry.Designer.cs">
+      <DependentUpon>pl_Port_Of_Entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_PO_Line_Item_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_PO_Line_Item_Status.Designer.cs">
+      <DependentUpon>pl_PO_Line_Item_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_PO_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_PO_Status.Designer.cs">
+      <DependentUpon>pl_PO_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_PO_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_PO_Type.Designer.cs">
+      <DependentUpon>pl_PO_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Price_Set_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Price_Set_Type.Designer.cs">
+      <DependentUpon>pl_Price_Set_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Price_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Price_Type.Designer.cs">
+      <DependentUpon>pl_Price_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Purchase_Order_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Purchase_Order_Type.Designer.cs">
+      <DependentUpon>pl_Purchase_Order_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Reason_For_Cancel.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Reason_For_Cancel.Designer.cs">
+      <DependentUpon>pl_Reason_For_Cancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Reason_for_Hold.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Reason_for_Hold.Designer.cs">
+      <DependentUpon>pl_Reason_for_Hold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Reason_for_Item_Hold.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Reason_for_Item_Hold.Designer.cs">
+      <DependentUpon>pl_Reason_for_Item_Hold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Record_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Record_Status.Designer.cs">
+      <DependentUpon>pl_Record_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Report_Name.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Report_Name.Designer.cs">
+      <DependentUpon>pl_Report_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_ROW.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_ROW.Designer.cs">
+      <DependentUpon>pl_ROW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Select_Options.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Select_Options.Designer.cs">
+      <DependentUpon>pl_Select_Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Sex.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Sex.Designer.cs">
+      <DependentUpon>pl_Sex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Shipping_Class.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Shipping_Class.Designer.cs">
+      <DependentUpon>pl_Shipping_Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Ship_Via.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Ship_Via.Designer.cs">
+      <DependentUpon>pl_Ship_Via.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Source.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Source.Designer.cs">
+      <DependentUpon>pl_Source.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_State.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_State.Designer.cs">
+      <DependentUpon>pl_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Tax_Number_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Tax_Number_Type.Designer.cs">
+      <DependentUpon>pl_Tax_Number_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Terms.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Terms.Designer.cs">
+      <DependentUpon>pl_Terms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Time_Zone.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Time_Zone.Designer.cs">
+      <DependentUpon>pl_Time_Zone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Title.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Title.Designer.cs">
+      <DependentUpon>pl_Title.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Transaction.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Transaction.Designer.cs">
+      <DependentUpon>pl_Transaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Unit.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Unit.Designer.cs">
+      <DependentUpon>pl_Unit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Users_Name.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Users_Name.Designer.cs">
+      <DependentUpon>pl_Users_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_User_Title.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_User_Title.Designer.cs">
+      <DependentUpon>pl_User_Title.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Use_Price_Set.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Use_Price_Set.Designer.cs">
+      <DependentUpon>pl_Use_Price_Set.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Vessel_Name.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Vessel_Name.Designer.cs">
+      <DependentUpon>pl_Vessel_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Vessel_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Vessel_Status.Designer.cs">
+      <DependentUpon>pl_Vessel_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Warehouse.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\pl_Warehouse.Designer.cs">
+      <DependentUpon>pl_Warehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PO_Line_Items.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PO_Line_Items.Designer.cs">
+      <DependentUpon>PO_Line_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PO_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PO_Main.Designer.cs">
+      <DependentUpon>PO_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PO_X_Line_Items.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PO_X_Line_Items.Designer.cs">
+      <DependentUpon>PO_X_Line_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_BatchesHeader.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_BatchesHeader.Designer.cs">
+      <DependentUpon>PSV_BatchesHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_DataTemplate.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_DataTemplate.Designer.cs">
+      <DependentUpon>PSV_DataTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_HTML.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_HTML.Designer.cs">
+      <DependentUpon>PSV_HTML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_OptionDefinition.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_OptionDefinition.Designer.cs">
+      <DependentUpon>PSV_OptionDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Process.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Process.Designer.cs">
+      <DependentUpon>PSV_Process.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Process_Steps.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Process_Steps.Designer.cs">
+      <DependentUpon>PSV_Process_Steps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Responses.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Responses.Designer.cs">
+      <DependentUpon>PSV_Responses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Status.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Status.Designer.cs">
+      <DependentUpon>PSV_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Templates.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Templates.Designer.cs">
+      <DependentUpon>PSV_Templates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Type.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_Type.Designer.cs">
+      <DependentUpon>PSV_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_VerifiedStatus.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PSV_VerifiedStatus.Designer.cs">
+      <DependentUpon>PSV_VerifiedStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PS_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\PS_Main.Designer.cs">
+      <DependentUpon>PS_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Line_Items.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Line_Items.Designer.cs">
+      <DependentUpon>RM_Line_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Line_Items_Show.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Line_Items_Show.Designer.cs">
+      <DependentUpon>RM_Line_Items_Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Main.Designer.cs">
+      <DependentUpon>RM_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Main_Show.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Main_Show.Designer.cs">
+      <DependentUpon>RM_Main_Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Options.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Options.Designer.cs">
+      <DependentUpon>RM_Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Options_Show.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Options_Show.Designer.cs">
+      <DependentUpon>RM_Options_Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Problems.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Problems.Designer.cs">
+      <DependentUpon>RM_Problems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Problems_Show.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Problems_Show.Designer.cs">
+      <DependentUpon>RM_Problems_Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Process.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Process.Designer.cs">
+      <DependentUpon>RM_Process.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Process_Show.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Process_Show.Designer.cs">
+      <DependentUpon>RM_Process_Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Test_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RM_Test_Data.Designer.cs">
+      <DependentUpon>RM_Test_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RV_Detail.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RV_Detail.Designer.cs">
+      <DependentUpon>RV_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RV_History.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\RV_History.Designer.cs">
+      <DependentUpon>RV_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SC_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SC_Main.Designer.cs">
+      <DependentUpon>SC_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SD_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SD_Main.Designer.cs">
+      <DependentUpon>SD_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SL_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SL_Main.Designer.cs">
+      <DependentUpon>SL_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SM_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SM_Main.Designer.cs">
+      <DependentUpon>SM_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\start.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\start.Designer.cs">
+      <DependentUpon>start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ST_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ST_Data.Designer.cs">
+      <DependentUpon>ST_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SV_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SV_Main.Designer.cs">
+      <DependentUpon>SV_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SV_System_Dates.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\SV_System_Dates.Designer.cs">
+      <DependentUpon>SV_System_Dates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\System_Value_Table.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\System_Value_Table.Designer.cs">
+      <DependentUpon>System_Value_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblAttestationDocumentsConfig.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblAttestationDocumentsConfig.Designer.cs">
+      <DependentUpon>tblAttestationDocumentsConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblExtendedProperties.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblExtendedProperties.Designer.cs">
+      <DependentUpon>tblExtendedProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblFileAttachmentLinkDefinition.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblFileAttachmentLinkDefinition.Designer.cs">
+      <DependentUpon>tblFileAttachmentLinkDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblFileAttachmentLinks.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblFileAttachmentLinks.Designer.cs">
+      <DependentUpon>tblFileAttachmentLinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblFileAttachments.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblFileAttachments.Designer.cs">
+      <DependentUpon>tblFileAttachments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblForm.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblForm.Designer.cs">
+      <DependentUpon>tblForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblFormHolder.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblFormHolder.Designer.cs">
+      <DependentUpon>tblFormHolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblFormOutputType.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblFormOutputType.Designer.cs">
+      <DependentUpon>tblFormOutputType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblGlobalUpdates.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblGlobalUpdates.Designer.cs">
+      <DependentUpon>tblGlobalUpdates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblGroupItems.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblGroupItems.Designer.cs">
+      <DependentUpon>tblGroupItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblGroups.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblGroups.Designer.cs">
+      <DependentUpon>tblGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblImageLocal.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblImageLocal.Designer.cs">
+      <DependentUpon>tblImageLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblMagicNumbers.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblMagicNumbers.Designer.cs">
+      <DependentUpon>tblMagicNumbers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblMyRecord.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblMyRecord.Designer.cs">
+      <DependentUpon>tblMyRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblReferenceTables.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblReferenceTables.Designer.cs">
+      <DependentUpon>tblReferenceTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblReportHolder.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblReportHolder.Designer.cs">
+      <DependentUpon>tblReportHolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSales_Report_Data_V2.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSales_Report_Data_V2.Designer.cs">
+      <DependentUpon>tblSales_Report_Data_V2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSaveAlert.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSaveAlert.Designer.cs">
+      <DependentUpon>tblSaveAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSchedule.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSchedule.Designer.cs">
+      <DependentUpon>tblSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblScheduleLog.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblScheduleLog.Designer.cs">
+      <DependentUpon>tblScheduleLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSearch.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSearch.Designer.cs">
+      <DependentUpon>tblSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSearchSetting.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSearchSetting.Designer.cs">
+      <DependentUpon>tblSearchSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSearchSettingDefinition.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSearchSettingDefinition.Designer.cs">
+      <DependentUpon>tblSearchSettingDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSettings.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSettings.Designer.cs">
+      <DependentUpon>tblSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblStates.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblStates.Designer.cs">
+      <DependentUpon>tblStates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblStoredProcedures.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblStoredProcedures.Designer.cs">
+      <DependentUpon>tblStoredProcedures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSystemDates.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSystemDates.Designer.cs">
+      <DependentUpon>tblSystemDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSystemLimits.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSystemLimits.Designer.cs">
+      <DependentUpon>tblSystemLimits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSystemText.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblSystemText.Designer.cs">
+      <DependentUpon>tblSystemText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblTraceSQL.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblTraceSQL.Designer.cs">
+      <DependentUpon>tblTraceSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblUSRDefinition.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblUSRDefinition.Designer.cs">
+      <DependentUpon>tblUSRDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblUSRType.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblUSRType.Designer.cs">
+      <DependentUpon>tblUSRType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblValidationErrors.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tblValidationErrors.Designer.cs">
+      <DependentUpon>tblValidationErrors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Account_Numbers_List.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Account_Numbers_List.Designer.cs">
+      <DependentUpon>tbl_Account_Numbers_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Days_In_n_Month.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Days_In_n_Month.Designer.cs">
+      <DependentUpon>tbl_Days_In_n_Month.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Day_from_Number.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Day_from_Number.Designer.cs">
+      <DependentUpon>tbl_Day_from_Number.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Grid_Column_Names.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Grid_Column_Names.Designer.cs">
+      <DependentUpon>tbl_Grid_Column_Names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Maintenance_Audit.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Maintenance_Audit.Designer.cs">
+      <DependentUpon>tbl_Maintenance_Audit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Maintenance_Errors.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Maintenance_Errors.Designer.cs">
+      <DependentUpon>tbl_Maintenance_Errors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Month_from_Number.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Month_from_Number.Designer.cs">
+      <DependentUpon>tbl_Month_from_Number.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Month_of_Week_Days.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Month_of_Week_Days.Designer.cs">
+      <DependentUpon>tbl_Month_of_Week_Days.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_MRU_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_MRU_Data.Designer.cs">
+      <DependentUpon>tbl_MRU_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Tbl_Service_Info.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Tbl_Service_Info.Designer.cs">
+      <DependentUpon>Tbl_Service_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Tbl_Service_Names.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Tbl_Service_Names.Designer.cs">
+      <DependentUpon>Tbl_Service_Names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Week_n_Day.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tbl_Week_n_Day.Designer.cs">
+      <DependentUpon>tbl_Week_n_Day.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TD_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TD_Main.Designer.cs">
+      <DependentUpon>TD_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tempFlyerData.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\tempFlyerData.Designer.cs">
+      <DependentUpon>tempFlyerData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\temp_IM_Price_Table.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\temp_IM_Price_Table.Designer.cs">
+      <DependentUpon>temp_IM_Price_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\testSP.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\testSP.Designer.cs">
+      <DependentUpon>testSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TrackDefaultEvents.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TrackDefaultEvents.Designer.cs">
+      <DependentUpon>TrackDefaultEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TrackEvents.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TrackEvents.Designer.cs">
+      <DependentUpon>TrackEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TrackingJobs.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TrackingJobs.Designer.cs">
+      <DependentUpon>TrackingJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TrackingStatus.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TrackingStatus.Designer.cs">
+      <DependentUpon>TrackingStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TrackingType.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TrackingType.Designer.cs">
+      <DependentUpon>TrackingType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Tran_Data_Info.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Tran_Data_Info.Designer.cs">
+      <DependentUpon>Tran_Data_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TS_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\TS_Main.Designer.cs">
+      <DependentUpon>TS_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\UD_Logon.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\UD_Logon.Designer.cs">
+      <DependentUpon>UD_Logon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\UD_Main.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\UD_Main.Designer.cs">
+      <DependentUpon>UD_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\UD_Options.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\UD_Options.Designer.cs">
+      <DependentUpon>UD_Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkAccessSecurity.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkAccessSecurity.Designer.cs">
+      <DependentUpon>wkAccessSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkBCI_Security_GroupsX.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkBCI_Security_GroupsX.Designer.cs">
+      <DependentUpon>wkBCI_Security_GroupsX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkContextMenus.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkContextMenus.Designer.cs">
+      <DependentUpon>wkContextMenus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkGroupItems.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkGroupItems.Designer.cs">
+      <DependentUpon>wkGroupItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkGroupNames.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkGroupNames.Designer.cs">
+      <DependentUpon>wkGroupNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkScreenDefinition.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkScreenDefinition.Designer.cs">
+      <DependentUpon>wkScreenDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkTreeLevelnLink.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkTreeLevelnLink.Designer.cs">
+      <DependentUpon>wkTreeLevelnLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkTreeList.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\wkTreeList.Designer.cs">
+      <DependentUpon>wkTreeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\WU_ERRORS.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\WU_ERRORS.Designer.cs">
+      <DependentUpon>WU_ERRORS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ZD_LIST.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ZD_LIST.Designer.cs">
+      <DependentUpon>ZD_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ZipZoneData.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ZipZoneData.Designer.cs">
+      <DependentUpon>ZipZoneData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Zone_On_Zip_Code_Range.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\Zone_On_Zip_Code_Range.Designer.cs">
+      <DependentUpon>Zone_On_Zip_Code_Range.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ZZ_Data.cs" />
+    <Compile Include="BusinessObjects\RestoredDataModelCode\ZZ_Data.Designer.cs">
+      <DependentUpon>ZZ_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseUpdate\Updater.cs" />
+    <Compile Include="Module.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Module.Designer.cs">
+      <DependentUpon>Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BusinessObjects\ReadMe.txt" />
+    <None Include="BusinessObjects\RestoredDataModel.xpo" />
+    <None Include="BusinessObjects\RestoredDataModel.xpo.diagram">
+      <DependentUpon>RestoredDataModel.xpo</DependentUpon>
+    </None>
+    <None Include="Controllers\ReadMe.txt" />
+    <None Include="DatabaseUpdate\ReadMe.txt" />
+    <None Include="Images\ReadMe.txt" />
+    <None Include="packages.config" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\config.xml" />
+    <None Include="FunctionalTests\sample.ets" />
+    <None Include="FunctionalTests\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Welcome.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

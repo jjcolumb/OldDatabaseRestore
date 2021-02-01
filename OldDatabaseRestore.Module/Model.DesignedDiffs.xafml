@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="OldDatabaseRestore">
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="A1_ListView" Index="0" />
+          <Item Id="CD_Address_ListView" Index="1" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="20.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="CD_Address_ListView">
+      <Columns>
+        <ColumnInfo Id="Country" Index="-1" />
+        <ColumnInfo Id="Name" Width="171" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
